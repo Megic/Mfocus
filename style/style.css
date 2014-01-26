@@ -1,0 +1,8 @@
+body{font-family: Tahoma, sans-serif;}
+header,nav,footer{display:block}
+.w960{width:960px;}
+.top{height:44px;background-color:#478bb6;color:#fff;line-height:44px;}
+a{display:inline-block;line-height:30px;font-size:14px;color:#666;background-color:#eee;margin:10px;padding-left:10px;padding-right:10px;text-decoration:none;}
+a:hover{background-color:#478bb6;color:#fff;}
+.mt30{margin-top:30px;}
+img{width:960px;height:360px;}
