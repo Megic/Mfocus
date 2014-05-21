@@ -63,8 +63,9 @@ if(opts.effect=='slide'){
   });
   
   //鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
+  var stopBD=opts.unlimited?obj.add(preBtn).add(nextBtn):obj;
   if(opts.scroll=='true'){
-  obj.hover(function() {
+  stopBD.hover(function(){
     clearInterval(picTimer);
   },function() {
       picTimer = setInterval(function() {
@@ -74,7 +75,7 @@ if(opts.effect=='slide'){
       index++;
     }
     },opts.sctime); //此4000代表自动播放的间隔，单位：毫秒
-  }).trigger("mouseleave");
+  });obj.trigger("mouseleave");
   }
   function showPics(index) { //普通切换
     if(button.length>0){
