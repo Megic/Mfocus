@@ -5,6 +5,7 @@
          button: '.button',    //按钮父标签  
        pre: '.pre', //向前
        next: '.next',//向后
+       unlimited: false,//是否不限制前后按钮父节点范围
        item: 'ul',//展示项父标签
        effect:'slide',//转换方式:slide/slideup/fade 三种切换形式
        scroll:'true',//是否自动滚动
@@ -24,6 +25,8 @@
   var index=0;
   var picTimer;
   var ys=0;
+  var preBtn=opts.unlimited?$(opts.pre):$(opts.pre,obj);
+  var nextBtn=opts.unlimited?$(opts.next):$(opts.next,obj);
 if(opts.effect=='slide'){
       var uwidth=opts.seamless?sWidth * 2*(len):sWidth * (len);
       obit.css("width",uwidth);
@@ -43,13 +46,13 @@ if(opts.effect=='slide'){
   }).eq(0).trigger("mouseenter");
 }else{showPics(index);}
   //上一页按钮
-  $(opts.pre,obj).click(function() {
+  preBtn.click(function() {
     index -= 1;
     if(index == -1) {index = len - 1;}
     showPics(index);
   });
   //下一页按钮
-  $(opts.next,obj).click(function() {
+  nextBtn.click(function() {
     index += 1;
     if(index==len&&opts.seamless){showPics(index);index=0;}else{
     if(index >= len) {index = 0;}
