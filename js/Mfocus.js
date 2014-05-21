@@ -50,6 +50,7 @@ if(opts.effect=='slide'){
     index -= 1;
     if(index == -1) {index = len - 1;}
     showPics(index);
+    return false;
   });
   //下一页按钮
   nextBtn.click(function() {
@@ -58,6 +59,7 @@ if(opts.effect=='slide'){
     if(index >= len) {index = 0;}
     showPics(index);
     }
+    return false;
   });
   
   //鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
